@@ -32,13 +32,23 @@ public class Card implements Comparable {
     public int compareTo(Object temp) {
         Card other = (Card) temp;
 
-        if (getSuit() == ((Card) temp).getSuit()) {
+        /*if (getSuit() == ((Card) temp).getSuit()) {
             if (getRank() > ((Card) temp).getRank()) {
                 return 1;
             } else if (getRank() == ((Card) temp).getRank()) {
                 return 0;
             } else return -1;
         } else if (getSuit() > ((Card) temp).getSuit()) {
+            return 1;
+        } else return -1;*/
+
+        if (getSuit() == other.getSuit()) {
+            if (getRank() > other.getRank()) {
+                return 1;
+            } else if (getRank() == other.getRank()) {
+                return 0;
+            } else return -1;
+        } else if (getSuit() > other.getSuit()) {
             return 1;
         } else return -1;
     }
