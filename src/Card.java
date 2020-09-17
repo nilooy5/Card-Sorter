@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class Card implements Comparable {
-    private int suit;
-    private int rank;
+    private final int suit;
+    private final int rank;
 
     public String[] suits = {"Diamonds", "Clubs", "Hearts", "Spades"};
     public String[] ranks = {"invalid", "invalid", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
@@ -35,6 +35,8 @@ public class Card implements Comparable {
         if (getSuit() == ((Card) temp).getSuit()) {
             if (getRank() > ((Card) temp).getRank()) {
                 return 1;
+            } else if (getRank() == ((Card) temp).getRank()) {
+                return 0;
             } else return -1;
         } else if (getSuit() > ((Card) temp).getSuit()) {
             return 1;
