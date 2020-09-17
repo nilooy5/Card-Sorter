@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Card implements Comparable {
+public class Card implements Comparable<Object> {
     private final int suit;
     private final int rank;
 

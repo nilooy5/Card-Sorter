@@ -9,10 +9,10 @@ public class Driver {
         Card card2 = Card.randomCard();
 
         String result;
-        if(card1.compareTo(card2) > 0) result = "bigger";
-        else if(card1.compareTo(card2) == 0) result = "Equal";
-        else result = "smaller";
+        if(card1.compareTo(card2) > 0) result = "bigger than ";
+        else if(card1.compareTo(card2) == 0) result = "Equal to ";
+        else result = "smaller than ";
 
-        System.out.println(card1.toString() + " is " + result + " than " + card2.toString());
+        System.out.println(card1.toString() + " is " + result + card2.toString());
     }
 }
