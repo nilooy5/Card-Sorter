@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Card implements Comparable {
     private int suit;
@@ -9,6 +10,10 @@ public class Card implements Comparable {
     public Card (int newSuit, int newRank) {
         suit = newSuit;
         rank = newRank;
+    }
+
+    public static Card randomCard() {
+        return new Card(generateSuit(),generateRank());
     }
 
     public int getRank() {
@@ -34,6 +39,22 @@ public class Card implements Comparable {
         } else if (getSuit() > ((Card) temp).getSuit()) {
             return 1;
         } else return -1;
+    }
+
+    private static int generateRank() {
+        Random rankRand = new Random();
+        int low = 2;
+        int high = 15;
+        int rank = rankRand.nextInt(high-low) + low;
+        return rank;
+    }
+
+    private static int generateSuit() {
+        Random suitRand = new Random();
+        int low = 0;
+        int high = 4;
+        int suit = suitRand.nextInt(high-low) + low;
+        return suit;
     }
 
 }
